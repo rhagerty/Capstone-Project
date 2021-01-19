@@ -1,52 +1,54 @@
 {% extends 'index.html' %}
 {% block content %}
+<!-- Ingredient thumbnails for search -->
+
 <div class="col-md-6">
     <h3 class="mainTitle">Choose a popular ingredient below or select a search function on the left!</h3>
 
     <div class="popularIngredients">
         <a href="/vodka-search-results">
             <div class="spirits">
-                <img class="imgThumb"
+                <img class="imgThumb" alt="Vodka image"
                     src="https://www.pinclipart.com/picdir/big/539-5390987_champagne-glass-icon-cocktail-clipart.png">
                 <div class="figcaption">Vodka Cocktails</div>
+            </div>
+        </a>
+        <a href="/gin-search-results">
+            <div class="spirits">
+                <img class="imgThumb" alt="Gin Image"
+                    src="https://www.pinclipart.com/picdir/big/367-3675389_cocktail-clipart-tipsy-pink-gin-png-download.png">
+                <div class="figcaption">Gin Cocktails</div>
+            </div>
+        </a>
+        <a href="/tequila-search-results">
+            <div class="spirits">
+                <img class="imgThumb" alt="Tequila Image"
+                    src="https://www.pinclipart.com/picdir/big/2-22001_margarita-clipart-png-margarita-glass-black-and-white.png">
+                <div class="figcaption">Tequila Cocktails</div>
+            </div>
+        </a>
+        <a href="/champagne-search-results">
+            <div class="spirits">
+                <img class="imgThumb" alt="Champagne image"
+                    src="https://www.pinclipart.com/picdir/big/32-327962_png-black-and-white-champagne-drawing-cartoon-champagne.png">
+                <div class="figcaption">Champagne Cocktails</div>
+            </div>
+        </a>
+        <a href="/rum-search-results">
+            <div class="spirits">
+                <img class="imgThumb" alt="Rum Image"
+                    src="https://www.pinclipart.com/picdir/big/18-180698_mai-tai-cocktail-garnish-alcoholic-drink-rum-mai.png">
+                <div class="figcaption">Rum Cocktails</div>
+            </div>
+        </a>
+        <a href="/non-alcoholic-search-results">
+            <div class="spirits">
+                <img class="imgThumb" alt="Non-alcoholic drinks image"
+                    src="https://www.pinclipart.com/picdir/big/393-3934326_1478090752-1850-pinacolada-cocktail-clipart.png">
+                <div class="figcaption">Alcohol-Free Cocktails</div>
+            </div>
         </a>
     </div>
-    <a href="/gin-search-results">
-        <div class="spirits">
-            <img class="imgThumb"
-                src="https://www.pinclipart.com/picdir/big/367-3675389_cocktail-clipart-tipsy-pink-gin-png-download.png">
-            <div class="figcaption">Gin Cocktails</div>
-        </div>
-    </a>
-    <a href="/tequila-search-results">
-        <div class="spirits">
-            <img class="imgThumb"
-                src="https://www.pinclipart.com/picdir/big/2-22001_margarita-clipart-png-margarita-glass-black-and-white.png">
-            <div class="figcaption">Tequila Cocktails</div>
-        </div>
-    </a>
-    <a href="/champagne-search-results">
-        <div class="spirits">
-            <img class="imgThumb"
-                src="https://www.pinclipart.com/picdir/big/32-327962_png-black-and-white-champagne-drawing-cartoon-champagne.png">
-            <div class="figcaption">Champagne Cocktails</div>
-        </div>
-    </a>
-    <a href="/rum-search-results">
-        <div class="spirits">
-            <img class="imgThumb"
-                src="https://www.pinclipart.com/picdir/big/18-180698_mai-tai-cocktail-garnish-alcoholic-drink-rum-mai.png">
-            <div class="figcaption">Rum Cocktails</div>
-        </div>
-    </a>
-    <a href="/non-alcoholic-search-results">
-        <div class="spirits">
-            <img class="imgThumb"
-                src="https://www.pinclipart.com/picdir/big/393-3934326_1478090752-1850-pinacolada-cocktail-clipart.png">
-            <div class="figcaption">Alcohol-Free Cocktails</div>
-        </div>
-    </a>
-</div>
 </div>
 
 {% endblock %}

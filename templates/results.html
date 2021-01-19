@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 {% block content %}
 
+<!-- Search results list -->
 
 <div class="col-md-7 results">
     <h2 class="resultsTitle">{{search_term}} </h2>
@@ -8,7 +9,7 @@
     <ul id="resultsList">
         {% for drink in drinks%}
         <a class="resultsAnchor" href="/display-recipe/{{drink.idDrink}}">
-            <img class="resultsImg" src="{{drink.strDrinkThumb}}">
+            <img class="resultsImg" src="{{drink.strDrinkThumb}}" alt="Image for {{drink.strDrink}}">
             <li id={{drink.idDrink}}>
                 <strong>{{drink.strDrink}}</strong>
             </li>
@@ -16,6 +17,5 @@
         {% endfor %}
     </ul>
 </div>
-
 
 {% endblock %}

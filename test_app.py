@@ -1,85 +1,42 @@
-
 from unittest import TestCase
 from app import app
-from models import db, User, Favorites
 from flask import session
 
-# Use test database and don't clutter tests with SQL
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres:///mixology"
-app.config['SQLALCHEMY_ECHO'] = False
-
-# Make Flask errors be real errors, rather than HTML pages with error info
+# Make Flask errors be real errors, not HTML pages with error info
 app.config['TESTING'] = True
 
-db.drop_all()
-db.create_all()
+app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-toolbar']
 
-user_data ={
-    "username":"bigbob22", 
-    "password": "greenteam2", 
-    "first_name": "bob"
-}
 
-class UserViewsTestCase(TestCase):
-    """Tests for views about users."""
+class AppViewsTestCase(TestCase):
 
-    def setUp(self):
-        """Make demo data."""
-
-        User.query.delete()
-
-        user = User(user_data)
-        db.session.add(user)
-        db.session.commit()
-
-        self.user= user
-
-    def tearDown(self):
-        """Clean up fouled transactions."""
-
-        db.session.rollback()
-
-    def test_registration(self):
-        """Test client registration."""
+    def age_verify_form(self):
         with app.test_client() as client:
-            resp= client.get("/register")
+            resp = client.get('/')
+            html = resp.get_data(as_text=True)
+
             self.assertEqual(resp.status_code, 200)
+            self.assertIn('<h3>Age Verification</h3>', html)
 
-            new_user= client.post('/register', data={"username": "hellothere", 'password': "woopwoop22", "first_name": "Bob"},
-                         follow_redirects=True)
-            self.assertEqual(new_user.status_code, 302)
-            self.assertEqual(new_user.location, "http://localhost/main")
-            self.assertEqual(session['username'], "hellothere")
-
-    def test_login(self):
-        """Test login."""
+    def test_registration_submit(self):
         with app.test_client() as client:
-            resp = client.get("/login")
-            self.assertEqual(resp.status_code, 200)
+            resp = client.post('/register',
+                               data={'username': 'blue', 'password': 'blue123', 'first_name': 'bob'})
 
-            login= client.post('/login', data={"username": "bigbob22", 'password': "greenteam2"},
-                         follow_redirects=True)
-            self.assertEqual(login.status_code, 302)
-            self.assertEqual(login.location, "http://localhost/main")
-            self.assertEqual(session['username'], "bigbob22")
-
-    def test_logout(self):
-        with app.test_client() as client:
-            resp = client.get("/logout", follow_redirects=True)
             self.assertEqual(resp.status_code, 302)
-            self.assertEqual(resp.location, "http://localhost/")
-            self.assertFalse(session['username'])
+            self.assertIn(session['username'], 'blue')
 
-    def test_form_search_direction(self):
+    def test_redirection(self):
         with app.test_client() as client:
-            resp = client.post('/ingredient-search', data={"search_term": "Gin"})
+            resp = client.get("/logout")
+
+            self.assertEqual(resp.status_code, 302)
+            self.assertEqual(resp.location, "http://localhost/main")
+
+    def test_input_search(self):
+        with app.test_client() as client:
+            resp = client.get("/vodka-search", follow_redirects=True)
+            html = resp.get_data(as_text=True)
 
             self.assertEqual(resp.status_code, 200)
-            self.assertEqual("search_term", "Gin")
-            
-    def test_thumbnail_search_direction(self):
-        with app.test_client() as client:
-            resp = client.get('/vodka-search-results')
-
-            self.assertEqual(resp.status_code, 200)
-            self.assertEqual("search_term", "Vodka")
+            self.assertIn('<h2 class="resultsTitle">Vodka</h2>', html)

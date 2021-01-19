@@ -105,7 +105,7 @@ hr:before {
   padding-bottom: -2rem;
 }
 
-/* Sidebar navigation */
+/********** Sidebar navigation *****/
 
 .nav-sidebar {
   padding-top: 0;
@@ -124,6 +124,7 @@ hr:before {
   padding-right: 20px;
   padding-left: 20px;
 }
+
 a:hover {
   color: coral;
   cursor: pointer;
@@ -215,7 +216,7 @@ a:hover {
 }
 
 .form-control {
-  margin-top: 1rem;
+  margin: 1rem;
   font-size: large;
 }
 
@@ -261,7 +262,7 @@ a:hover {
   color: rgb(42, 42, 42);
 }
 
-.index-search{
+.index-search {
   margin-bottom: 10px;
 }
 
@@ -334,22 +335,15 @@ strong {
   padding: 10px;
 }
 
-.fas.fa-glass-martini {
-  float: left;
-  padding: 5px;
-}
-
 .allIngredients {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
 
-.allIngredients:hover{
+.allIngredients:hover {
   box-shadow: 0 0 40px 40px coral inset;
 }
 
-#allIngredientsList{
-  column-count: 3;
-  column-gap: 0;
+#allIngredientsList {
   list-style-type: none;
   font-family: "Lora", serif;
   background-color: rgba(59, 59, 59, 0.7);
@@ -357,9 +351,11 @@ strong {
   text-align: center;
   margin-top: 20px;
   color: #337ab7;
+  column-count: 3;
+  padding: 1rem;
 }
 
-.allIngredients{
+.allIngredients {
   border: 2px solid coral;
   font-size: 16px;
   font-weight: bold;
@@ -368,13 +364,14 @@ strong {
   padding: 10px;
   margin: 10px;
   width: 175px;
+  display: inline-block;
 }
 
-.results{
+.results {
   text-align: center;
 }
 
-/* recipe detail page */
+/********** recipe detail page ***********/
 
 .recipeName {
   font-family: "Lora", serif;
@@ -414,7 +411,8 @@ strong {
 }
 
 .nameContainer,
-.glassType, .category {
+.glassType,
+.category {
   height: min-content;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -453,8 +451,8 @@ strong {
   display: inline-block;
 }
 
-.messageContainer{
-  text-align: center
+.messageContainer {
+  text-align: center;
 }
 
 /*********** age verification popup ***********/
@@ -516,7 +514,6 @@ strong {
   vertical-align: middle;
 }
 
-small{
+small {
   margin-bottom: 10px;
 }
-

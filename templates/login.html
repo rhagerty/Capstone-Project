@@ -1,22 +1,20 @@
 {% extends 'index.html' %}
-
 {% block content %}
+<!-- User login form -->
+
 <div class="col-md loginPage">
   <form class="loginForm" method="POST">
     <h1>Login</h1>
 
     {{ form.hidden_tag() }}
-    <p>
-      {{ form.username(class_="form-control", placeholder="USERNAME") }}
-    <p></p>
+    {{ form.username(class_="form-control", placeholder="USERNAME") }}
     {{ form.password(class_="form-control", placeholder="PASSWORD") }}
 
     {% for field in form
     if field.widget.input_type != 'hidden' %}
-    {% for error in field.errors %}
-    <span class="form-text text-danger">{{ error }}</span>
-    {% endfor %}
-    </p>
+      {% for error in field.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
     {% endfor %}
 
     <button class="loginSubmitBtn" type="submit">Login</button>

@@ -9,6 +9,6 @@ class UserForm(FlaskForm):
     first_name = StringField("First Name", validators=[InputRequired()])
 
 class UserLoginForm(FlaskForm):
-    username = StringField("username", validators=[InputRequired()])
-    password = PasswordField("password", validators=[InputRequired()])
+    username = StringField("Username", validators=[InputRequired()])
+    password = PasswordField("Password", validators=[InputRequired()])
    

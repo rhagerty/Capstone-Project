@@ -1,12 +1,15 @@
 import requests
 from models import Recipe
 
+# API helper functions
+
 
 def search_by_ingredient(ingredient):
     response = requests.get(
         f"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={ingredient}")
     r = response.json()
     drinks = r["drinks"]
+   
     return drinks
 
 

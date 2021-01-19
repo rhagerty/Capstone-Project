@@ -80,35 +80,35 @@ def logout_user():
     """Log out current user"""
     session.pop('username')
 
-    return redirect('/')
+    return redirect('/main')
 
 
 @app.route('/<input>-search', methods=['GET', 'POST'])
 def display_form_search_results(input):
     """Show search bar search results list"""
     search_term = (request.form[f'{input}']).capitalize()
+
     if input == "ingredient":
         drinks = search_by_ingredient(search_term)
-        return render_template("/results.html", drinks=drinks, search_term=search_term)
     elif input == "name":
         drinks = search_by_name(search_term)
-        return render_template("/results.html", drinks=drinks, search_term=search_term)
     elif input == "letter":
         drinks = search_by_letter(search_term)
-        return render_template("/results.html", drinks=drinks, search_term=search_term)
+
+    return render_template("/results.html", drinks=drinks, search_term=search_term)
 
 
 @app.route('/<search_term>-search-results', methods=['GET', 'POST'])
 def display_thumbnail_search_results(search_term):
     """Main page thumbnail search results"""
-    if search_term == "non-alcoholic":
+
+    search_term = search_term.capitalize()
+    if search_term == "Non-alcoholic":
         drinks = search_by_non_alcoholic()
-        search_term = search_term.capitalize()
-        return render_template("/results.html", drinks=drinks, search_term=search_term)
     else:
         drinks = search_by_ingredient(search_term)
-        search_term = search_term.capitalize()
-        return render_template("/results.html", drinks=drinks, search_term=search_term)
+
+    return render_template("/results.html", drinks=drinks, search_term=search_term)
 
 
 @app.route('/get-random-selection', methods=['GET', 'POST'])
@@ -120,11 +120,16 @@ def display_random():
     return redirect(f"/display-recipe/{drink_id}")
 
 
+@app.route('/all-ingredients-list', methods=['GET', 'POST'])
+def display_all_ingredients():
+    ingredients = get_all_ingredients_list()
+    return render_template("all_ingredients.html", ingredients=ingredients)
+
+
 @app.route('/display-recipe/<drink_id>', methods=['GET', 'POST'])
 def display_recipe(drink_id):
     """Display recipe details"""
     recipe = create_recipe_obj(drink_id)
-    print(recipe.ingredients)
 
     return render_template("displayrecipe.html", recipe=recipe)
 
@@ -170,11 +175,3 @@ def remove_from_favorites(drink_id):
     db.session.commit()
     flash("Recipe removed from favorites!")
     return redirect(f"/display-recipe/{drink_id}")
-
-
-@app.route('/all-ingredients-list', methods=['GET', 'POST'])
-def display_all_ingredients():
-    ingredients = get_all_ingredients_list()
-    return render_template("all_ingredients.html", ingredients=ingredients)
-
-
