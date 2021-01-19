@@ -387,41 +387,56 @@ strong {
   margin-left: 1rem;
 }
 
-.recipeHeader {
+.recipeHeader{
   border: none;
   border-radius: 5px;
   background-color: rgba(128, 126, 126, 0.5);
   font-family: "Lora", serif;
-  margin-bottom: 5px;
   height: min-content;
-  padding: 3rem;
+  padding: 2rem;
+}
+
+.instructions{
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(128, 126, 126, 0.5);
+  font-family: "Lora", serif;
+  padding: 1rem;
+  margin-bottom: 5px;
+}
+
+.glassType > h4 {
+  margin-top: 0;
+}
+
+.ingredientsList > h4 {
+  margin-top: 0;
 }
 
 .glassType{
   display: inline-block;
-  vertical-align: top;
-  margin: 0 1rem 0 1rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
-.ingredientsList {
-  vertical-align: top;
-  display: inline-block;
+.ingredientsList{
+  float: right;
+  display: block;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .ingredients {
-  margin: 0;
   list-style-type: none;
   padding: 0;
-}
-
-.instructions{
-  margin: 5rem;
+  margin: 0;
 }
 
 .recipeImg {
   height: 15em;
   vertical-align: top;
   float: left;
+  margin: 1rem;
 }
 
 .favoritesLinks {

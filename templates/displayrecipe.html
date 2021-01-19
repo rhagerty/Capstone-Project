@@ -2,17 +2,17 @@
 {% block content %}
 
 <!-- recipe detail page -->
-
-<div class="col-md-5 recipe">
+<div class="col-sm-6 recipe">
     <h2 class="recipeName">Recipe for {{recipe.name}}</h2>
-    <div class="recipeHeader">
-        <img src={{recipe.img}} class="recipeImg" alt="Image of {{recipe.name}}">
-
-        <div class="glassType">
+    <div class="row recipeHeader">
+        <div class="col">
+            <img src={{recipe.img}} class="recipeImg" alt="Image of {{recipe.name}}">
+        </div>
+        <div class="col glassType">
             <h4>Glass Type:</h4>
             {{recipe.glass}}
         </div>
-        <div class="ingredientsList">
+        <div class="col ingredientsList">
             <h4>Ingredients:</h4>
             {%for k,v in recipe.ingredients%}
             <ul class="ingredients">
@@ -20,11 +20,14 @@
             </ul>
             {% endfor %}
         </div>
-        <div class="instructions">
+    </div>
+    <div class="row">
+        <div class="col-sm instructions">
             <h4>Instructions:</h4>
             <p>{{recipe.instructions}}</p>
         </div>
     </div>
+
     <div class="row favoritesLinks">
         {% if session['username'] %}
         {% if recipe.drink_id in session['favorites']%}
@@ -46,6 +49,7 @@
         </section>
     </div>
 </div>
+
 {% endif %}
 {% endwith %}
 {% endblock %}
