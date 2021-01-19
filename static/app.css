@@ -387,7 +387,7 @@ strong {
   margin-left: 1rem;
 }
 
-.recipeHeader{
+.recipeHeader {
   border: none;
   border-radius: 5px;
   background-color: rgba(128, 126, 126, 0.5);
@@ -396,7 +396,7 @@ strong {
   padding: 2rem;
 }
 
-.instructions{
+.instructions {
   border: none;
   border-radius: 5px;
   background-color: rgba(128, 126, 126, 0.5);
@@ -413,13 +413,13 @@ strong {
   margin-top: 0;
 }
 
-.glassType{
+.glassType {
   display: inline-block;
   padding: 1rem;
   margin: 1rem;
 }
 
-.ingredientsList{
+.ingredientsList {
   float: right;
   display: block;
   padding: 1rem;
@@ -526,8 +526,15 @@ strong {
   color: rgb(212, 208, 208);
   border-radius: 20%;
   padding: 1rem;
-  margin-left: 50%;
-  margin-right: 50%;
+  margin: 5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .age {
