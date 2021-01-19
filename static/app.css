@@ -19,17 +19,17 @@ body::after {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* Top/main navbar */
 
 .fas.fa-cocktail {
-  margin-left: 20px;
   margin-top: 2rem;
-  width: 100px;
   z-index: -1;
   position: absolute;
   font-size: 9rem;
+  float: left;
 }
 
 .home:hover {
@@ -68,7 +68,7 @@ hr:before {
 }
 
 .small {
-  margin-left: 13rem;
+  margin-left: 2.7em;
   margin-top: 2rem;
   margin-bottom: 0;
   padding: 0;
@@ -78,7 +78,7 @@ hr:before {
 }
 
 .mixologist {
-  margin-left: 13rem;
+  margin-left: 1em;
   font-size: 9rem;
   padding-top: 2.5rem;
 }
@@ -142,8 +142,8 @@ a:hover {
 
 .imgThumb {
   overflow: hidden;
-  width: 150px;
-  height: 150px;
+  width: 9em;
+  height: 9em;
   background-repeat: no-repeat;
   margin-top: 1rem;
 }
@@ -151,8 +151,8 @@ a:hover {
 .spirits {
   display: inline-block;
   overflow: hidden;
-  width: 200px;
-  height: 200px;
+  width: 12em;
+  height: 12em;
   border-radius: 15%;
   background-color: rgba(59, 59, 59, 0.7);
   text-align: center;
@@ -514,6 +514,6 @@ strong {
   vertical-align: middle;
 }
 
-small {
+.age {
   margin-bottom: 10px;
 }
