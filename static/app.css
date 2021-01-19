@@ -520,16 +520,16 @@ strong {
 .box {
   background: rgba(59, 59, 59, 0.5);
   position: absolute;
-  margin-left: 25%;
   z-index: 9;
   display: table;
   text-align: center;
   color: rgb(212, 208, 208);
   border-radius: 20%;
   padding: 1rem;
-  vertical-align: top;
+  margin: 5rem;
 }
 
 .age {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
+  padding: 1rem;
 }

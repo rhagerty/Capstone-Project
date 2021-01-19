@@ -1,20 +1,45 @@
-<!-- Age Verification Popup -->
-{% extends 'index.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="col-md-4 box">
-    <h3>Age Verification</h3>
-    <p>By clicking enter, I certify that I am over the age of 21.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <a href="/main" class="enterPage" id="refresh-page">ENTER</a>
+    <title>Your Personal Mixologist</title>
+    <script src="https://unpkg.com/jquery"></script>
 
-    <p class="decor-line"></p>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=East+Sea+Dokdo&family=Lora&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="/static/app.css">
+</head>
 
-    <a href="#" class="exitPage" id="reset-session">EXIT</a>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 box">
+                <h3>Age Verification</h3>
+                <p>By clicking enter, I certify that I am over the age of 21.</p>
 
-    <small class="age">Always enjoy responsibly.</small>
-</div>
+                <a href="/main" class="enterPage" id="refresh-page">ENTER</a>
 
-<div class="overlay-verify"></div>
+                <p class="decor-line"></p>
 
-{% endblock %}
+                <a href="#" class="exitPage" id="reset-session">EXIT</a>
+
+                <small class="age">Always enjoy responsibly.</small>
+            </div>
+
+            <div class="overlay-verify"></div>
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+            <script src="/static/ui.js"></script>
+</body>
+
+</html>
