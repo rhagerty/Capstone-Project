@@ -48,6 +48,7 @@ hr {
   border-color: white;
   border-width: 2px 0 0 0;
   border-radius: 20px;
+  width: auto;
 }
 
 hr:before {
@@ -116,13 +117,13 @@ hr:before {
 }
 
 #pageSubmenu {
-  margin-left: 15px;
+  margin-left: 1rem;
   font-size: smaller;
 }
 
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 a:hover {
@@ -250,7 +251,7 @@ a:hover {
   height: 4rem;
   border-radius: 5px 0 0 5px;
   outline: none;
-  background-color: rgba(185, 183, 183, 0.6);
+  background-color: rgba(206, 205, 205, 0.6);
   text-align: center;
   width: 100%;
   font-family: "Bebas Neue", cursive;
@@ -263,18 +264,18 @@ a:hover {
 }
 
 .index-search {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .searchButton {
-  width: 40px;
+  width: 4rem;
   height: 4rem;
   border: 1px solid #337ab7;
   background: #337ab7;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 2rem;
   display: inline-block;
   position: absolute;
 }
@@ -284,7 +285,7 @@ a:hover {
 #resultsList {
   list-style-type: none;
   font-family: "Lora", serif;
-  background-color: rgba(59, 59, 59, 0.7);
+  background-color: rgba(82, 82, 82, 0.7);
   border-radius: 5px;
   text-align: center;
   padding-left: 0;
@@ -298,17 +299,17 @@ strong {
 .resultsAnchor {
   display: inline-block;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 1rem;
   margin-left: 0;
-  height: 200px;
-  width: 200px;
+  height: 12em;
+  width: 12em;
   vertical-align: top;
 }
 
 .resultsImg {
-  margin-top: 10px;
-  width: 150px;
-  height: 150px;
+  margin-top: 1.5rem;
+  width: 9em;
+  height: 9em;
   border-radius: 10px;
   padding: 0;
 }
@@ -340,7 +341,7 @@ strong {
 }
 
 .allIngredients:hover {
-  box-shadow: 0 0 40px 40px coral inset;
+  box-shadow: 0 0 3rem 3rem rgba(255, 127, 80, 0.7) inset;
 }
 
 #allIngredientsList {
@@ -349,7 +350,7 @@ strong {
   background-color: rgba(59, 59, 59, 0.7);
   border-radius: 5px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1rem;
   color: #337ab7;
   column-count: 3;
   padding: 1rem;
@@ -363,7 +364,7 @@ strong {
   background-color: rgba(59, 59, 59, 0.7);
   padding: 10px;
   margin: 10px;
-  width: 175px;
+  width: 75%;
   display: inline-block;
 }
 
@@ -375,7 +376,7 @@ strong {
 
 .recipeName {
   font-family: "Lora", serif;
-  margin: 20px;
+  margin: 1em;
 }
 
 .recipe {
@@ -419,7 +420,7 @@ strong {
 }
 
 .recipeImg {
-  height: 175px;
+  height: 13em;
   float: left;
 }
 
@@ -444,7 +445,7 @@ strong {
   background-color: rgba(128, 126, 126, 0.5);
   font-family: "Lora", serif;
   color: white;
-  margin-top: 25px;
+  margin-top: 3rem;
   padding: 5px;
   text-align: center;
   font-size: 16px;
@@ -515,5 +516,5 @@ strong {
 }
 
 .age {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
