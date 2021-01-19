@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+<div class="col-md-6 results">
+    <h3 class="searchTitle">Click an ingredient below to search for drink recipes!</h3>
+    <ul id="allIngredientsList">
+        {% for ingredient in ingredients%}
+        <button class="allIngredients" href="/{{ingredient}}-search-results">
+            <li>
+                {{ingredient}}
+            </li>
+        </button>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

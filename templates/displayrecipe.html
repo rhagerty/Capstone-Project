@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- recipe detail page -->
+<div class="col-md-7 recipe">
+    <h2 class="recipeName">Recipe for {{recipe.name}}</h2>
+    <div class="row recipeHeader">
+        <div class="col-md-3 nameContainer">
+            <img src={{recipe.img}} class="recipeImg">
+        </div>
+        <div class="col-md-2 glassType">
+            <h4>Glass Type:</h4>
+            {{recipe.glass}}
+        </div>
+        <div class="col-md-3 ingredientsList">
+            <h4>Ingredients:</h4>
+            {%for k,v in recipe.ingredients%}
+            <ul class="ingredients">
+                <li>{{k}} {{v}}</li>
+            </ul>
+            {% endfor %}
+        </div>
+        <div class="instructions">
+            <h4>Instructions:</h4>
+            <p>{{recipe.instructions}}</p>
+        </div>
+    </div>
+
+    <div class="row favoritesLinks">
+        {% if session['username'] %}
+        {% if recipe.drink_id in session['favorites']%}
+        <a class="removeSavedRecipe" href="/remove-from-favorites/{{recipe.drink_id}}">Remove From Favorites</a>
+        {% else %}
+        <a class="saveRecipe" href="/save-to-favorites/{{recipe.drink_id}}">Save This Recipe</a>
+        {% endif %}
+        {% else %}
+        <a href="/register">Create an account to save this recipe!</a>
+        {% endif %}
+    </div>
+    {% with messages= get_flashed_messages() %}
+    {% if messages %}
+    <div class="row messageContainer">
+        <section class="messages">
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+{% endif %}
+{% endwith %}
+{% endblock %}

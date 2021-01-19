@@ -1,0 +1,19 @@
+{% extends 'index.html' %} 
+{% block content %}
+
+
+
+<div class="col-sm-7">
+    <h3 class="searchTitle"> {{first_name}}'s Saved Recipes:</h3>
+    <ul id="resultsList">
+        {% for drink in drinks %}
+        <a class="resultsAnchor" href="/display-recipe/{{drink.idDrink}}">
+            <img class="resultsImg" src="{{drink.strDrinkThumb}}">
+            <li id={{drink.idDrink}}>
+                <strong>{{drink.strDrink}}</strong>
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

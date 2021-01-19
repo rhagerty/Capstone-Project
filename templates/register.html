@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="col-md registerPage">
+  <h1>Create an Account</h1>
+
+  <form method="POST" id="registerForm">
+
+    {{ form.hidden_tag() }}
+    <p>
+    {{ form.username(class_="form-control", placeholder="USERNAME") }}
+    <p></p>
+    {{ form.password(class_="form-control", placeholder="PASSWORD") }}
+    <p></p>
+    {{ form.first_name(class_="form-control", placeholder="WHAT SHOULD WE CALL YOU?") }}
+
+    {% for field in form
+    if field.widget.input_type != 'hidden' %}
+
+    {% for error in field.errors %}
+    <span class="form-text text-danger">{{ error }}</span>
+    {% endfor %}
+    </p>
+    {% endfor %}
+
+    <button class="registerBtn" type="submit">Register</button>
+    <h3>Already have an account?</h3>
+    <span class="registerLoginLink"><a href="/login">Login here</a></span>
+  </form>
+</div>
+{% endblock %}

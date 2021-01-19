@@ -1,0 +1,19 @@
+<!-- Age Verification Popup -->
+{% extends 'index.html' %}
+{% block content %}
+
+
+<div class="col-md-4 box">
+    <h3>Age Verification</h3>
+    <p>By clicking enter, I certify that I am over the age of 21.</p>
+
+    <a href="/main" class="enterPage" id="refresh-page">ENTER</a>
+
+    <p class="decor-line"></p>
+
+    <a href="#" class="exitPage" id="reset-session">EXIT</a>
+
+    <small>Always enjoy responsibly.</small>
+</div>
+<div class="overlay-verify"></div>
+{% endblock %}

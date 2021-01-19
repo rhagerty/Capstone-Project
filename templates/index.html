@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Your Personal Mixologist</title>
+    <script src="https://unpkg.com/jquery"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=East+Sea+Dokdo&family=Lora&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+
+<body>
+    <!-- Page Logo -->
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="logo">
+                    <a href="/main" class="home"><i class="fas fa-cocktail"></i>
+                        <div class="small">your personal</div>
+                        <div class="mixologist">MIXOLOGIST</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2 login-logout">
+                {% if session['username'] %}
+                <a href="/logout">Logout</a>
+                {% else %}
+                <a href="/login">Login</a>
+                <span>|</span>
+                <a href="/register"> Register </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <!--------------- sidebar navigation --------->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <div class="nav nav-sidebar">
+                    <div><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Search</a>
+                        <div class="collapse list-unstyled" id="pageSubmenu">
+                            <div class="ingredientNav">
+                                <a href="#">By Ingredient</a>
+                            </div>
+                            <div class="nameNav">
+                                <a href="#">By Drink Name</a>
+                            </div>
+                            <div class="firstLetterNav">
+                                <a href="#">By First Letter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div><a href="/all-ingredients-list">All Ingredients</a></div>
+                    <div><a class="random" href="/get-random-selection">Random Selection!</a></div>
+                    {% if session['username'] %}
+                    <div><a href="/{{session['username']}}/favorites">My Mixology</a></div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Ingredient Searchbar form -->
+
+            <div class="col-md-6">
+                <form class="index-search" id="ingredientForm" action="/ingredient-search" method="post">
+                    <input id="ingredientInput" type="text" name="ingredient" class="searchTerm"
+                        placeholder="Enter an ingredient">
+                    <button class="searchButton" id="ingredientSearchBtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Drink Name Searchbar form -->
+
+            <div class="col-md-6">
+                <form class="index-search" id="nameForm" action="/name-search" method="post">
+                    <input id="nameInput" type="text" name="name" class="searchTerm" placeholder="Enter a drink name">
+                    <button class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- First Letter Searchbar form -->
+
+            <div class="col-md-6">
+                <form class="index-search" id="firstLetterForm" action="/letter-search" method="post">
+                    <input id="firstLetterInput" type="text" name="letter" class="searchTerm"
+                        placeholder="Enter the first letter of a drink name">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="row">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.js"
+                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/axios/dist/axios.js"></script>
+            <script src="/static/ui.js"></script>
+</body>
+
+</html>
