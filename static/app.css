@@ -415,7 +415,7 @@ strong {
 }
 
 .instructions{
-  margin-top: 5rem;
+  margin: 5rem;
 }
 
 .recipeImg {
@@ -512,7 +512,7 @@ strong {
   color: rgb(212, 208, 208);
   border-radius: 20%;
   padding: 1rem;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .age {
