@@ -525,8 +525,12 @@ strong {
   text-align: center;
   color: rgb(212, 208, 208);
   border-radius: 20%;
-  padding: 1rem;
-  margin: 5rem;
+  margin:auto;
+  padding: 1em;
+}
+
+.ageVerify{
+  text-align: center;
 }
 
 @media screen and (max-width: 480px) {
@@ -536,7 +540,7 @@ strong {
   }
 }
 
-.age {
-  margin-bottom: 1em;
+small.age {
+  margin-bottom: 3em;
   padding: 1rem;
 }
