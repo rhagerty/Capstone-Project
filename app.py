@@ -7,11 +7,7 @@ from itertools import chain
 import json
 from helpers import search_by_non_alcoholic, search_by_ingredient, search_by_id, get_random_selection, search_by_name, search_by_letter, create_recipe_obj, get_all_ingredients_list
 import os
-import psycopg2
 
-DATABASE_URL = os.environ['DATABASE_URL']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
