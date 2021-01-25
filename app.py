@@ -9,12 +9,11 @@ from helpers import search_by_non_alcoholic, search_by_ingredient, search_by_id,
 import os
 import psycopg2
 
-DATABASE_URL = os.environ['postgres://amherlzrmpbgkj:9778f982542fd9d280d3bf6c2ca72ca3f8ad0e500d5ea7fe7e01539b04a53909@ec2-34-192-72-159.compute-1.amazonaws.com:5432/dc4g08tsniskto']
+DATABASE_URL = os.environ['DATABASE_URL']
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("postgres://amherlzrmpbgkj:9778f982542fd9d280d3bf6c2ca72ca3f8ad0e500d5ea7fe7e01539b04a53909@ec2-34-192-72-159.compute-1.amazonaws.com:5432/dc4g08tsniskto", 'postgres:///mixology')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
 app.config["SECRET_KEY"] = "nevertell"
