@@ -86,20 +86,29 @@ def logout_user():
     return redirect('/main')
 
 
+
 @app.route('/<input>-search', methods=['GET', 'POST'])
 def display_form_search_results(input):
     """Show search bar search results list"""
     search_term = (request.form[f'{input}']).capitalize()
 
     if input == "ingredient":
-        drinks = search_by_ingredient(search_term)
+        try:
+            drinks = search_by_ingredient(search_term)
+            return render_template("/results.html", drinks=drinks, search_term=search_term)
+        except:
+            flash("Sorry- We couldn't find anything with that ingredient!", 'error')
+            return redirect('/main')
     elif input == "name":
-        drinks = search_by_name(search_term)
+        try:
+            drinks = search_by_name(search_term)
+            return render_template("/results.html", drinks=drinks, search_term=search_term)
+        except:
+            flash("Sorry- We couldn't find anything by that name!", 'error')
+            return redirect('/main')
     elif input == "letter":
         drinks = search_by_letter(search_term)
-
-    return render_template("/results.html", drinks=drinks, search_term=search_term)
-
+        return render_template("/results.html", drinks=drinks, search_term=search_term)
 
 @app.route('/<search_term>-search-results', methods=['GET', 'POST'])
 def display_thumbnail_search_results(search_term):

@@ -2,17 +2,18 @@
 {% block content %}
 
 <!-- recipe detail page -->
-<div class="col-sm-6 recipe">
+
+<div class="col-md-7 recipe">
     <h2 class="recipeName">Recipe for {{recipe.name}}</h2>
     <div class="row recipeHeader">
-        <div class="col">
+        <div class="col-md-3 nameContainer">
             <img src={{recipe.img}} class="recipeImg" alt="Image of {{recipe.name}}">
         </div>
-        <div class="col glassType">
+        <div class="col-md-2 glassType">
             <h4>Glass Type:</h4>
             {{recipe.glass}}
         </div>
-        <div class="col ingredientsList">
+        <div class="col-md-3 ingredientsList">
             <h4>Ingredients:</h4>
             {%for k,v in recipe.ingredients%}
             <ul class="ingredients">
@@ -20,9 +21,7 @@
             </ul>
             {% endfor %}
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm instructions">
+        <div class="instructions">
             <h4>Instructions:</h4>
             <p>{{recipe.instructions}}</p>
         </div>
@@ -39,17 +38,16 @@
         <a href="/register">Create an account to save this recipe!</a>
         {% endif %}
     </div>
-    {% with messages= get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     <div class="row messageContainer">
-        <section class="messages">
-            {% for msg in messages %}
-            <p>{{msg}}</p>
+        <section>
+            {% for category, message in messages %}
+            <p class="{{ category }}">{{msg}}</p>
             {% endfor %}
         </section>
     </div>
 </div>
-
 {% endif %}
 {% endwith %}
 {% endblock %}

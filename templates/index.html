@@ -69,7 +69,17 @@
                     {% endif %}
                 </div>
             </div>
-
+            <div class="error-messages-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <ul class="error-messages">
+                    {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </div>
             <!-- Ingredient Searchbar form -->
 
             <div class="col-md-6">
@@ -104,11 +114,11 @@
                     </button>
                 </form>
             </div>
-            
-            <div class="row">
-                {% block content %}
-                {% endblock %}
-            </div>
+
+
+            {% block content %}
+            {% endblock %}
+
 
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

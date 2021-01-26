@@ -244,6 +244,23 @@ a:hover {
 
 /*********** Searchbar************* */
 
+.error-messages {
+  color: white;
+  list-style-type: none;
+  font-family: "Lora", serif;
+}
+
+.error {
+  background-color: rgba(131, 46, 46, 0.8);
+  font-family: "Lora", serif;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 16px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
 .searchTerm {
   border: 3px solid #337ab7;
   border-right: none;
@@ -455,12 +472,11 @@ strong {
   font-size: 20px;
 }
 
-.messages {
+.success {
   border-radius: 5px;
   background-color: rgba(128, 126, 126, 0.5);
   font-family: "Lora", serif;
   color: white;
-  margin-top: 3rem;
   padding: 5px;
   text-align: center;
   font-size: 16px;
@@ -482,7 +498,6 @@ strong {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 .decor-line {
   position: relative;
   border-top: 1px solid #ccc;
@@ -520,27 +535,17 @@ strong {
 .box {
   background: rgba(59, 59, 59, 0.5);
   position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
   z-index: 9;
-  display: table;
   text-align: center;
   color: rgb(212, 208, 208);
   border-radius: 20%;
-  margin:auto;
-  padding: 1em;
+  padding: 3rem;
+  width: fit-content;
 }
 
-.ageVerify{
-  text-align: center;
-}
-
-@media screen and (max-width: 480px) {
-  .box {
-    display: block;
-    text-align: center;
-  }
-}
-
-small.age {
-  margin-bottom: 3em;
-  padding: 1rem;
+small {
+  margin-bottom: 1rem;
 }
