@@ -407,16 +407,13 @@ strong {
 .recipeHeader {
   border: none;
   border-radius: 5px;
-  background-color: rgba(128, 126, 126, 0.5);
+  background-color: rgba(128, 126, 126, 0.7);
   font-family: "Lora", serif;
   height: min-content;
   padding: 2rem;
 }
 
 .instructions {
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(128, 126, 126, 0.5);
   font-family: "Lora", serif;
   padding: 1rem;
   margin-bottom: 5px;
@@ -434,6 +431,7 @@ strong {
   display: inline-block;
   padding: 1rem;
   margin: 1rem;
+  height: max-content;
 }
 
 .ingredientsList {
