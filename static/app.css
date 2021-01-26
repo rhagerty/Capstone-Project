@@ -432,6 +432,7 @@ strong {
   padding: 2rem;
   margin: 2rem;
   height: 15em;
+  vertical-align: top;
 }
 
 .ingredientsList {
@@ -439,6 +440,7 @@ strong {
   display: block;
   padding: 1rem;
   margin: 1rem;
+  height: 15em;
 }
 
 .ingredients {
@@ -451,7 +453,12 @@ strong {
   height: 15em;
   vertical-align: top;
   float: left;
-  margin: 1rem;
+  margin: 0;
+}
+
+.nameContainer{
+  margin: 0;
+  padding: 0;
 }
 
 .favoritesLinks {
